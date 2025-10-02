@@ -1,38 +1,58 @@
 <script setup>
 import { ref } from 'vue'
+
+const researchStats = ref({
+  institutions: 47,
+  researchAreas: 12,
+  activeProjects: 8,
+  countries: 15
+})
 </script>
 
 <template>
   <div class="space-y-6">
-    <!-- Üdvözlés -->
-    <div class="bg-white p-6 rounded-xl shadow-md">
-      <h1 class="text-3xl font-bold mb-2">Üdvözöllek a Dashboardon!</h1>
-      <p class="text-gray-600">Itt kezdheted a keresést az elérhetőségek között.</p>
+    <!-- Welcome -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Vezérlőpult</h1>
+      <p class="text-gray-600">Nemzetközi kutatási infrastruktúrák nyilvántartása és kezelése</p>
     </div>
 
-    <!-- Funkciók / menüpontok -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-blue-100 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer">
-        <h2 class="text-xl font-semibold mb-2">Keresés az adatbázisokban</h2>
-        <p class="text-gray-700">Indítsd el a fő keresést és böngészd az elérhetőségeket.</p>
-        <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Keresés</button>
+    <!-- Research Statistics -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl shadow-md">
+        <div class="text-3xl font-bold mb-2">{{ researchStats.institutions }}</div>
+        <div class="text-blue-100">Regisztrált intézetek</div>
+      </div>
+      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-xl shadow-md">
+        <div class="text-3xl font-bold mb-2">{{ researchStats.researchAreas }}</div>
+        <div class="text-green-100">Kutatási területek</div>
+      </div>
+      <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-xl shadow-md">
+        <div class="text-3xl font-bold mb-2">{{ researchStats.activeProjects }}</div>
+        <div class="text-purple-100">Aktív projektek</div>
+      </div>
+      <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-xl shadow-md">
+        <div class="text-3xl font-bold mb-2">{{ researchStats.countries }}</div>
+        <div class="text-orange-100">Országok</div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-blue-200">
+        <h2 class="text-xl font-semibold mb-2 text-blue-800">Intézetek keresése</h2>
+        <p class="text-blue-600">Kutatási intézetek böngészése és szűrése</p>
       </div>
 
-      <div class="bg-green-100 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer">
-        <h2 class="text-xl font-semibold mb-2">Profil kezelése</h2>
-        <p class="text-gray-700">Nézd meg a profilodat, módosítsd az adatokat.</p>
-        <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Profil</button>
+      <div class="bg-green-50 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-green-200">
+        <h2 class="text-xl font-semibold mb-2 text-green-800">Globális térkép</h2>
+        <p class="text-green-600">Intézmények földrajzi megjelenítése</p>
       </div>
 
-      <div class="bg-yellow-100 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer">
-        <h2 class="text-xl font-semibold mb-2">Segítség / Dokumentáció</h2>
-        <p class="text-gray-700">Olvasd el a dokumentációt vagy segítséget kérhetsz.</p>
-        <button class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Megnézem</button>
+      <div class="bg-purple-50 p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-purple-200">
+        <h2 class="text-xl font-semibold mb-2 text-purple-800">Adatkezelés</h2>
+        <p class="text-purple-600">Intézeti adatok frissítése</p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Kicsit több vizuális tér a dashboardon */
-</style>
