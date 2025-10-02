@@ -7,6 +7,10 @@ import Signup from '../pages/Signup.vue'
 import NotFound from '../pages/NotFound.vue'
 import Dashboard from '../pages/Dashboard.vue'
 import Profile from '../pages/Profile.vue'
+import AnalyticalPlatforms from '../pages/AnalyticalPlatforms.vue'
+import Databases from '../pages/Databases.vue'
+import ExposurePlatforms from '../pages/ExposurePlatforms.vue'
+import GlobalMap from '../pages/GlobalMap.vue'
 
 
 const routes = [
@@ -24,7 +28,11 @@ const routes = [
     component: DefaultLayout,
     children: [
       {path: '', name: 'dashboard', component: Dashboard},
-      {path: '/profile', name: 'profile', component: Profile},
+      {path: 'profile', name: 'profile', component: Profile},
+      {path: 'analytical-platforms', name: 'analyticalplatforms', component: AnalyticalPlatforms},
+      {path: 'databases', name: 'databases', component: Databases},
+      {path: 'exposure-platforms', name: 'exposureplatforms', component: ExposurePlatforms},
+      {path: 'global-map', name: 'globalmap', component: GlobalMap},
     ]
   },
   {
